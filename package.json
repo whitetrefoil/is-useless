@@ -30,13 +30,13 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/jest": "^22.2.3",
-    "@types/node": "^9.6.49",
-    "jest": "^22.4.4",
-    "rimraf": "^2.6.3",
-    "ts-jest": "^22.4.6",
-    "tslint": "^5.17.0",
-    "typescript": "^2.9.2"
+    "@types/jest": "^25.2.3",
+    "@types/node": "^14.0.4",
+    "jest": "^26.0.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.0.0",
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.3"
   },
   "jest": {
     "collectCoverage": true,
@@ -47,7 +47,7 @@
     "coveragePathIgnorePatterns": [
       "/~.*"
     ],
-    "coverageDirectory": "test_results",
+    "coverageDirectory": "test_results/jest",
     "coverageReporters": [
       "clover",
       "lcov",
@@ -55,7 +55,8 @@
     ],
     "globals": {
       "ts-jest": {
-        "skipBabel": false
+        "tsConfig": "tests/tsconfig.json",
+        "babelConfig": false
       }
     },
     "moduleFileExtensions": [
@@ -63,11 +64,11 @@
       "js",
       "json"
     ],
-    "moduleNameMapper": {},
+    "moduleNameMapper": {
+      "^~/(.*)$": "<rootDir>/src/$1"
+    },
+    "preset": "ts-jest",
     "setupFiles": [],
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(js|ts)$",
-    "transform": {
-      ".ts": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-    }
+    "transformIgnorePatterns": []
   }
 }
