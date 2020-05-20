@@ -30,6 +30,10 @@ See test specs in `/tests/*.spec.ts` for usage.
 Changelog & Roadmap
 -------------------
 
+### v0.2.0
+
+* Update npm dependencies.
+
 ### v0.1.1
 
 * Update npm dependencies.
